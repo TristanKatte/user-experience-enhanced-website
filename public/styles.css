@@ -1,0 +1,183 @@
+:root {
+    /* secundaire palette */
+    --BGcolor:#272932;
+    --PrimaryColor:#947eb0;
+    --Secondarycolor:#519879;
+    --TextColor:#ecf8f8;
+    --Accentcolor:#fb8b24;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--BGcolor);
+    color: var(--TextColor);
+    font-family: halton, sans-serif;
+    
+    
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: var(--TextColor);
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  padding: 1.5em;
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.5em;
+  padding: 1.5em;
+}
+
+p {
+  font-family: halton-italic, sans-serif;
+  font-size: 1em;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  margin: 3em;
+  transition: box-shadow 0.1s;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+section  {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: row;
+    flex-wrap: wrap;
+    padding: 3.5em;
+    width: 100%;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    border-bottom: 1px solid var(--Accentcolor);
+    & ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        & li {
+            padding: .8em;
+
+            & a {
+                color: var(--TextColor);
+                text-decoration: none;
+                font-family: halton-italic, sans-serif;
+            }
+        }
+    }
+}
+
+.clickable-image {
+    height: auto;
+    cursor: pointer;
+    margin: 1.19em;
+    transition: transform 0.3s ease-in-out; 
+    border-radius: 5px;
+    filter: grayscale(0%); 
+  }
+  
+  .clickable-image.selected{
+    filter: grayscale(100%); 
+  }
+  
+  .clickable-image:hover {
+    transform: scale(1.05);
+  }
+
+  .vragenlijst-btn{
+    width: 50%;
+    padding: 15px;
+    background-color: var(--PrimaryColor);
+    border: none;
+    color: rgb(0, 0, 0);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-family: halton, sans-serif;
+    margin: 0 auto;
+    text-transform: uppercase;
+  }
+  
+  .vragenlijst-btn:hover {
+    background-color: var(--Secondarycolor);
+    color: var(--TextColor);
+  }
+
+.stakeholder-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--PrimaryColor);
+  border: none;
+  color: rgb(0, 0, 0);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: halton, sans-serif;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--Accentcolor);
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+input:checked + img {
+  box-shadow: 0 0 0 10px var(--PrimaryColor);
+  transition: box-shadow 0.11s;
+}
+
+input[type='submit'] {
+  width: 100%;
+  padding: 0.5em;
+  font-family: halton, sans-serif;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: 2px solid var(--Accentcolor);
+  background-color: var(--BGcolor);
+  color: var(--TextColor);
+}
+
+input[type='submit']:hover {
+  background-color: var(--Secondarycolor);
+  color: var(--TextColor);
+  cursor: pointer;
+}

@@ -1,0 +1,18 @@
+<%- include('./partials/head') %>
+
+<main>
+    <section>
+        <form action="/vragenlijst" method="post">
+            <% sdgs.forEach(function (sdg){ %>
+                <label>
+                    <input type="checkbox">
+                    <img src="https://fdnd-agency.directus.app/assets/<%=sdg.icon%> alt=" class="clickable-image">
+                </label>
+            <% }) %>
+            <button type="submit" id="back-button" class="vragenlijst-btn">Naar vragenlijst</button>
+        </form>
+    </section>
+</main>
+
+    
+<%- include('./partials/foot') %>
