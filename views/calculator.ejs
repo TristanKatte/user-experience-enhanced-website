@@ -5,7 +5,7 @@
         <form action="/vragenlijst" method="post">
             <% sdgs.forEach(function (sdg){ %>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" value="<%=sdg.title%>">
                     <img src="https://fdnd-agency.directus.app/assets/<%=sdg.icon%> alt=" class="clickable-image">
                 </label>
             <% }) %>
