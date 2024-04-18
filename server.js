@@ -20,21 +20,22 @@ app.use(express.urlencoded({ extended: true }))
 
 // Stel het basis endpoint in
 const apiUrl = 'https://fdnd-agency.directus.app/items'
+const sdgs = []
 
-const sdgData = await fetchJson(apiUrl + '/hf_sdgs')
-const stakeholdersData = await fetchJson(apiUrl + '/hf_stakeholders')
-const scoresData = await fetchJson(apiUrl + '/hf_scores')
-const companiesData = await fetchJson(apiUrl + '/hf_companies/1')
+// const sdgData = await fetchJson(apiUrl + '/hf_sdgs')
+// const stakeholdersData = await fetchJson(apiUrl + '/hf_stakeholders')
+// const scoresData = await fetchJson(apiUrl + '/hf_scores')
+// const companiesData = await fetchJson(apiUrl + '/hf_companies/1')
 
-console.log(companiesData.data.name)
+
 
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
   response.render('index', {
-      sdgs: sdgData.data,
-      stakeholder: stakeholdersData.data,
-      score: scoresData.data,
-      company: companiesData.data
+      // sdgs: sdgData.data,
+      // stakeholder: stakeholdersData.data,
+      // score: scoresData.data,
+      // company: companiesData.data
 });
 });
 
@@ -73,19 +74,9 @@ app.get('/calculator', function (request, response){
     });
     });
 
-    app.get('/vragenlijst', function (request, response){
-      fetchJson('https://fdnd-agency.directus.app/items/hf_companies').then((companyDataUitDeAPI) =>{
-        response.render('vragenlijst', {companies: companyDataUitDeAPI.data});
-      });
-      });
-
     // Handle questionnaire page GET request
-  app.get('/vragenlijst', async (req, res) => {
-      const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
-      const response = await fetchJson(apiUrl);
-      const data = response.data || [];
-      const clickedImages = req.session.clickedImages || [];
-      res.render('vragenlijst', {data, clickedImages });
+  app.get('/vragenlijst',  (req, res) => {
+      res.render('vragenlijst', sdgs );
     });
 
       
@@ -93,36 +84,13 @@ app.get('/calculator', function (request, response){
   
 
 /***** post routes *****/
-
-// Render stakeholder page
-app.post('/stakeholder', async (req, res) => {
-  const apiUrl = 'https://fdnd-agency.directus.app/items/hf_stakeholders';
-  const response = await fetchJson(apiUrl);
-  const data = response.data || [];
-  res.render('stakeholder');
-});
-
-// Handle clicked images for SDG
-app.post('/ClickedImagesSDG', (req, res) => {
-  const { clickedImages } = req.body;
-  req.session.clickedImages = clickedImages; // Store clickedImages in session
-  res.json({ success: true });
-});
-
-// Render company page
 app.post('/vragenlijst', function (request, response){
-  response.render('vragenlijst')
+  sdgs.push(request.body.id)
+  console.log(request.body)
+  response.redirect(303,'/vragenlijst')
 });
 
-app.post('/vragenlijst', (req, res) => { //post route naar / met response request
-  console.log(req.body); // log request body in console
-  const sdgId = req.body.sdgs; // haal sdg uit request body
-  if (sdgId) {
-      res.redirect(`/calculator?sdgIds=${sdgId}`); // redirect naar scoreboard net de sdgId
-  } else {
-      res.redirect('/?error=true'); // redirect naar home met error
-  }
-});
+
 
 
 
