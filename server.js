@@ -54,12 +54,6 @@ app.get('/calculator', function (request, response){
 	});
   });
 
-  app.get('/bedrijf', function (request, response) {
-    fetchJson('https://fdnd-agency.directus.app/items/hf_companies').then((CompanyDataUitDeAPI) => {
-      response.render('bedrijf', {companies: CompanyDataUitDeAPI.data});
-    });
-  });
-
   //GET route voor de stakeholders
   app.get('/stakeholder', function (request, response){
     fetchJson('https://fdnd-agency.directus.app/items/hf_stakeholders').then((stakeholderDataUitDeAPI) => {
@@ -76,34 +70,16 @@ app.get('/calculator', function (request, response){
 
     // Handle questionnaire page GET request
   app.get('/vragenlijst',  (req, res) => {
-      res.render('vragenlijst', sdgs );
+      res.render('vragenlijst', {sdgs: sdgs[0] });
     });
-
-      
-    
-  
 
 /***** post routes *****/
 app.post('/vragenlijst', function (request, response){
   sdgs.push(request.body.id)
-  console.log(request.body)
   response.redirect(303,'/vragenlijst')
 });
 
 
-
-
-
-
-
-// Render SDG page
-app.post('/SDG', async (req, res) => {
-  const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
-  const response = await fetchJson(apiUrl);
-  const data = response.data || [];
-  req.session.data = data; 
-  res.render('SDG', {data, chosenStakeholder: req.body.chosenItem });
-});
 
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8000)

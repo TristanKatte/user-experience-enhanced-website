@@ -9,7 +9,7 @@
             <% sdgs.forEach(function (sdg){ %>
                 <label>
                     <input type="checkbox" name="id" value="<%=sdg.id%>">
-                    <img src="https://fdnd-agency.directus.app/assets/<%=sdg.icon%> alt=" class="clickable-image">
+                    <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %> alt=" class="clickable-image">
                 </label>
             <% }) %>
             <button type="submit" id="back-button" class="vragenlijst-btn">Naar vragenlijst</button>
