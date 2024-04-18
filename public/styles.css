@@ -131,6 +131,11 @@ nav {
     color: var(--TextColor);
   }
 
+  .vragenlijst-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
 .stakeholder-btn {
   width: 100%;
   padding: 15px;
