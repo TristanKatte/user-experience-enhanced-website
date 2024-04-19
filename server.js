@@ -61,13 +61,6 @@ app.get('/calculator', function (request, response){
     });
     });
 
-    //GET route voor de sdgs
-  app.get('/SDG', function (request, response){
-    fetchJson('https://fdnd-agency.directus.app/items/hf_sdgs').then((sdgDataUitDeAPI) => {
-      response.render('SDG', {sdgs: sdgDataUitDeAPI.data});
-    });
-    });
-
     // Handle questionnaire page GET request
   app.get('/vragenlijst',  (req, res) => {
       res.render('vragenlijst', {sdgs: sdgs[0] });
