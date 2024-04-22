@@ -22,27 +22,19 @@ app.use(express.urlencoded({ extended: true }))
 const apiUrl = 'https://fdnd-agency.directus.app/items'
 const sdgs = []
 
-// const sdgData = await fetchJson(apiUrl + '/hf_sdgs')
-// const stakeholdersData = await fetchJson(apiUrl + '/hf_stakeholders')
-// const scoresData = await fetchJson(apiUrl + '/hf_scores')
-// const companiesData = await fetchJson(apiUrl + '/hf_companies/1')
+
 
 
 
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
-  response.render('index', {
-      // sdgs: sdgData.data,
-      // stakeholder: stakeholdersData.data,
-      // score: scoresData.data,
-      // company: companiesData.data
-});
+  response.render('index');
 });
 
 app.get('/dashboard', function (request, response) {
-  response.render('dashboard', {
-    sdgs: sdgData.data
-  });
+  response.render('dashboard');
+
+
 });
 
 //GET route voor de calculator

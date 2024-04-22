@@ -95,6 +95,10 @@ nav {
     }
 }
 
+nav:focus {
+  outline: 4px solid var(--Secondarycolor);
+}
+
 .clickable-image {
     height: auto;
     cursor: pointer;
