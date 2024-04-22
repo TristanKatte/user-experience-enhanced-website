@@ -44,6 +44,7 @@ app.get('/calculator', function (request, response){
 	});
   });
 
+
   //GET route voor de stakeholders
   app.get('/stakeholder', function (request, response){
     fetchJson('https://fdnd-agency.directus.app/items/hf_stakeholders').then((stakeholderDataUitDeAPI) => {
@@ -67,6 +68,7 @@ app.post('/vragenlijst', function (request, response){
 
 app.post('/dashboard', function (request, response){
   response.render('/dashboard')
+  response.redirect(303,'/dashboard')
 });
 
 
