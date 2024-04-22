@@ -1,39 +1,49 @@
 <%- include('./partials/head') %>
 <main>
-<h2>Kan je per SDG op een schaal van 1/5 aangeven hoe groot de <span>positieve</span> bijdrage is?</h2>
-  <h3>Denk hier heel zorgvuldig over na, dit is belangrijk voor de uiteindelijke uitslag.</h3>
- <section class="result">
-  <% sdgs.forEach(function (sdg){ %>
-   
-        
-    <img src="https://fdnd-agency.directus.app/assets/<%=sdg%>" alt="">
+  <h2>
+    Kan je per SDG op een schaal van 1/5 aangeven hoe groot de
+    <span>positieve</span> bijdrage is?
+  </h2>
+  <h3>
+    Denk hier heel zorgvuldig over na, dit is belangrijk voor de uiteindelijke
+    uitslag.
+  </h3>
+  <article>
+    <section class="result">
+      <form action="/dashboard" method="post">
+        <% sdgs.forEach(function (sdg){ %>
 
-   
-<% }) %>
-</section>
+        <img
+          src="https://fdnd-agency.directus.app/assets/<%=sdg%>"
+          alt=""
+          width="250"
+          height="250"
+        />
 
+        <label>
+          Vul hier een score van -5 tot 5 in
+          <input
+            type="range"
+            name="score"
+            min="-5"
+            max="5"
+            class="slider"
+          />
+        </label>
 
+        <% }) %>
+        <button type="submit" id="back-button" class="vragenlijst-btn">
+          Verstuur
+        </button>
+      </form>
+    </section>
+    <section class="score"></section>
+  </article>
+ 
 
-<section>
-  <!-- <form action="/dashboard" method="post">
-    <label>
-      <input type="range" name="score" min="-5" max="5" class="slider" tabindex="0">
-  </label>
-
-
-  <button type="submit" id="back-button" class="vragenlijst-btn">Verstuur</button>
-
-  </form> -->
-</section>
-      
-    
-
-
-
-
-
-
-
+  <!-- <section class="score">
+  
+</section> -->
 </main>
 
 <%- include('./partials/foot') %>

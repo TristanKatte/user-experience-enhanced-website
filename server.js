@@ -53,6 +53,9 @@ app.get('/calculator', function (request, response){
 
     // Handle questionnaire page GET request
   app.get('/vragenlijst',  (req, res) => {
+    if (sdgs.length == 0) {
+      res.redirect(302, '/calculator')
+    }
       res.render('vragenlijst', {sdgs: sdgs[0] });
     });
 
@@ -60,6 +63,10 @@ app.get('/calculator', function (request, response){
 app.post('/vragenlijst', function (request, response){
   sdgs.push(request.body.id)
   response.redirect(303,'/vragenlijst')
+});
+
+app.post('/dashboard', function (request, response){
+  response.render('/dashboard')
 });
 
 

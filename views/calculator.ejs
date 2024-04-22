@@ -2,19 +2,18 @@
 
 <main>
     <section>
-        <div id="popup" class="hidden">
-            <p>Pop-up message!</p>
-          </div>
+     
         <form action="/vragenlijst" method="post">
             <% sdgs.forEach(function (sdg){ %>
                 <label>
                     <input type="checkbox" name="id" value="<%=sdg.icon%>">
-                    <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %> alt=" class="clickable-image">
+                    <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %> alt=" class="clickable-image" width="250" height="250">
                 </label>
             <% }) %>
             <button type="submit" id="back-button" class="vragenlijst-btn">Naar vragenlijst</button>
         </form>
     </section>
+    
 </main>
 
     

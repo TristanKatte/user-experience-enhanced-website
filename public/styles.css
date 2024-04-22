@@ -75,6 +75,13 @@ header{
     align-items: center;
 }
 
+article {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
 nav {
     border-bottom: 1px solid var(--Accentcolor);
     & ul {
@@ -211,4 +218,8 @@ input[type='submit']:hover {
   display: flex;
   justify-content: center;
   flex-flow: column;
+  flex-wrap: nowrap;
 }
+
+
+
