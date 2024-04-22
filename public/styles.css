@@ -205,3 +205,10 @@ input[type='submit']:hover {
   color: var(--TextColor);
   cursor: pointer;
 }
+
+.result {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+}
