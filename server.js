@@ -22,10 +22,6 @@ app.use(express.urlencoded({ extended: true }))
 const apiUrl = 'https://fdnd-agency.directus.app/items'
 const sdgs = []
 
-
-
-
-
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
   response.render('index');
@@ -33,8 +29,6 @@ app.get('/', function (request, response) {
 
 app.get('/dashboard', function (request, response) {
   response.render('dashboard');
-
-
 });
 
 //GET route voor de calculator
@@ -63,6 +57,25 @@ app.post('/vragenlijst', function (request, response){
   sdgs.push(request.body.id)
   response.redirect(303,'/vragenlijst')
 });
+
+// Yassir, deze drie variabelen heb je nodig:
+// bedrijfId
+// aangevinkteRadiobox 👊
+// name
+fetch('https://fdnd.directus.app/items/hf_stakeholders', {
+  method: 'POST',
+  body: JSON.stringify({
+    company_id: bedrijfId,
+    type: aangevinkteRadiobox,
+    name: name
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8'
+  }
+}).then((postReponse) => {
+  // Redirect naar whatever je wil, bro :)
+  response.redirect(303, '/detail/' + request.params.id)
+})
 
 
 
