@@ -22,19 +22,6 @@ app.use(express.urlencoded({ extended: true }))
 const apiUrl = 'https://fdnd-agency.directus.app/items'
 const sdgs = []
 
-// sdgs.forEach(sdg => {
-//   await fetch('https://fdnd-agency.directus.app/items/hf_scores', {
-//     method: 'POST',
-//     body: JSON.stringify({
-//       sdg_id: sdg,
-//       stakeholder_id: 7, // <-- Hier wil je iets dynamisch, eigenlijk
-//       score: 0
-//     }),
-//     headers: {
-//       'Content-type': 'application/json; charset=UTF-8'
-//     }
-//   })
-// })
 
 
 

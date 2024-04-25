@@ -7,17 +7,33 @@
             <% sdgs.forEach(function (sdg){ %>
                 <label>
                     <input type="checkbox" name="id" value="<%=sdg.icon%>">
-                    <picture>
-                        <!-- <source srcset="https://fdnd-agency.directus.app/assets/"
-                        type="image/webp"
-                        <source srcset="https://fdnd-agency.directus.app/assets/"
-                        type="image/avif" -->
-                        <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=webp alt=" class="clickable-image" width="250" height="250">
-                    </picture>
+                   
+
+                        <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>format=webp alt=" class="clickable-image" width="250" height="250">
+                    
                 </label>
             <% }) %>
             <button type="submit" id="back-button" class="vragenlijst-btn">Naar vragenlijst</button>
         </form>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Modal Header</h2>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the Modal Body</p>
+        <p>Some other text...</p>
+      </div>
+      <div class="modal-footer">
+        <h3>Modal Footer</h3>
+      </div>
+    </div>
+  
+  </div>
     </section>
     
 </main>
