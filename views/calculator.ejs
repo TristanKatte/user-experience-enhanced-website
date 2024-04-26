@@ -2,33 +2,34 @@
 
 <main>
     <section>
-     <dialog id="favDialog">
+     <!-- <dialog id="favDialog">
+    </dialog>
+    <output></output> -->
         <form action="/vragenlijst" method="post">
             <% sdgs.forEach(function (sdg){ %>
                 <label>
                     <input type="checkbox" name="id" value="<%=sdg.icon%>">
                    
-                      <picture>
-                        <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?webp" type="image/webp">
-                        <source srcset="https://fdnd-agency.directus.app/assets<%= sdg.icon %>?avif" type="image/avif">
-                        <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?width=250 alt=" class="clickable-image" width="250" height="250">
-                      </picture>
+                      
+                        <!-- <source srcset="https://fdnd-agency.directus.app/assets/?webp" type="image/webp">
+                        <source srcset="https://fdnd-agency.directus.app/assets?avif" type="image/avif"> -->
+                        <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>format=webp alt=" class="clickable-image" width="250" height="250">
+                    
                     
                 </label>
-                <p>
-                  <label>
+                <!-- <p> -->
+                  <!-- <label>
                     Deze sdgs berekenen?
                   </label>
                 </p>
                 <div>
                   <button value="cancel" formmethod="dialog">Terug</button>
                   <button id="confirmBtn" value="default">Bevestig</button>
-                </div>
+                </div> -->
             <% }) %>
             <button type="submit" id="back-button" id="showDialog" class="vragenlijst-btn">Naar vragenlijst</button>
         </form>
-    </dialog>
-    <output></output>
+
     </section>
     
 </main>

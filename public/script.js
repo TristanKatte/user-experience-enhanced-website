@@ -1,20 +1,22 @@
 // console.log('Script is running');
-const showButton = document.getElementById("showDialog");
-const favDialog = document.getElementById("favDialog");
-const outputBox = document.querySelector("output");
-const confirmBtn = favDialog.querySelector("#confirmBtn");
+// Get the modal
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("back-button");
+const span = document.getElementsByClassName("close")[0];
 
-showButton.addEventListener("click", () => {
-    favDialog.showModal();
-  });
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
 
-  favDialog.addEventListener("close", (e) => {
-    outputBox.value =
-      favDialog.returnValue === "default"
-        ? "No return value."
-        : `ReturnValue: ${favDialog.returnValue}.`;
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
 
-        confirmBtn.addEventListener("click", (event) => {
-            event.preventDefault(); // We don't want to submit this fake form
-            favDialog.close(selectEl.value); // Have to send the select box value here.
-            });
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
