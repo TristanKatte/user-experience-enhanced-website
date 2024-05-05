@@ -1,22 +1,12 @@
 // console.log('Script is running');
-// Get the modal
-const modal = document.getElementById("myModal");
-const btn = document.getElementById("back-button");
-const span = document.getElementsByClassName("close")[0];
+const modal = document.querySelector('#favDialog');
+const openModal = document.querySelector('.open-button');
+const closeModal = document.querySelector('.close-button');
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+openModal.addEventListener('click', () => {
+  modal.showModal();
+})
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+openModal.addEventListener('click', () => {
+  Modal.close();
+});

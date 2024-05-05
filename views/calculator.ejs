@@ -2,9 +2,9 @@
 
 <main>
     <section>
-     <!-- <dialog id="favDialog">
-    </dialog>
-    <output></output> -->
+      <button class="open-button vragenlijst-btn">Open dialog</button>
+      <button class="close-button vragenlijst-btn">Sluit dialog</button>
+     <dialog  id="favDialog">
         <form action="/vragenlijst" method="post">
             <% sdgs.forEach(function (sdg){ %>
                 <label>
@@ -17,20 +17,24 @@
                     
                     
                 </label>
-                <!-- <p> -->
-                  <!-- <label>
-                    Deze sdgs berekenen?
-                  </label>
-                </p>
-                <div>
-                  <button value="cancel" formmethod="dialog">Terug</button>
-                  <button id="confirmBtn" value="default">Bevestig</button>
-                </div> -->
+
             <% }) %>
-            <button type="submit" id="back-button" id="showDialog" class="vragenlijst-btn">Naar vragenlijst</button>
+            <!-- <button type="submit" id="back-button" id="showDialog" class="vragenlijst-btn">Naar vragenlijst</button> -->
         </form>
+        <p>
+          <label>
+            Deze sdgs berekenen?
+          </label>
+        </p>
+        <div>
+          <button value="cancel" formmethod="dialog">Terug</button>
+          <button id="confirmBtn" value="default">Bevestig</button>
+        </div>
+      </dialog>
+      <output></output>
 
     </section>
+  
     
 </main>
 
