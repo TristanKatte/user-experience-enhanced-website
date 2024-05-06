@@ -1,12 +1,14 @@
 // console.log('Script is running');
-const modal = document.querySelector('#favDialog');
+const dialog = document.querySelector('#favDialog');
 const openModal = document.querySelector('.open-button');
 const closeModal = document.querySelector('.close-button');
+console.log(dialog);
+console.log('hallo');
 
-openModal.addEventListener('click', function()  {
-  modal.showModal();
+openModal.addEventListener('click', () => {
+  dialog.showModal();
 })
 
-openModal.addEventListener('click', function() {
-  modal.close();
-});
+closeModal.addEventListener('click', () => {
+  dialog.close();
+})

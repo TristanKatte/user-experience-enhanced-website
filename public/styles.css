@@ -221,7 +221,8 @@ input[type='submit']:hover {
 
 #favDialog {
   padding: 1em;
-  max-width: 50ch;
+  max-width: 500ch;
+  background-color: var(--BGcolor);
 
   & > *{
     margin: 0 0 0.5rem 0;
@@ -236,5 +237,45 @@ input[type='submit']:hover {
     dodgerblue,
     green
   );
-  opacity: 0.75;
+  opacity: 0.55;
+}
+
+.open-button {
+  width: 10%;
+  padding: 15px;
+  background-color: var(--PrimaryColor);
+  border: none;
+  color: rgb(0, 0, 0);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: halton, sans-serif;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.open-button:hover {
+  background-color: var(--Secondarycolor);
+  color: var(--TextColor);
+  font-weight: bold;
+}
+
+.close-button {
+  width: 15%;
+  padding: 15px;
+  background-color: var(--PrimaryColor);
+  border: none;
+  color: rgb(0, 0, 0);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: halton, sans-serif;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.close-button:hover {
+  background-color: var(--Secondarycolor);
+  color: var(--TextColor);
+  font-weight: bold;
 }
